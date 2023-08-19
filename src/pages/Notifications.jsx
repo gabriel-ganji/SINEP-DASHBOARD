@@ -10,7 +10,7 @@ export const Notifications = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const notifies = await axios.get("http://localhost:3033/singep/notifies/11959050868");
+                const notifies = await axios.get("http://localhost:3033/singep/notifies/11958279760");
                 setData(notifies);
             } catch(err){
                 console.log(err);
@@ -36,7 +36,7 @@ export const Notifications = () => {
 
     return (
         <div>
-            <h3>Notificações</h3><br/>
+            <h3>Notificações</h3><br/><hr/><br/>
             <p>Produtos vencidos:</p><br />
             <div id="stockTableNot">
             <table className='ProdListNot'>

@@ -3,8 +3,8 @@
 .box {
     padding: 20px 60px;
     border-radius: $borderRadius;
-    background-color: $mainBg;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 
     &-purple {
         background-color: rgb(80, 136, 255);
@@ -17,5 +17,9 @@
         @include tablet {
             height: calc(100% - $mobileSpacing);
         }
+    }
+    &.darkMode {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: rgb(255, 255, 255);
     }
 }

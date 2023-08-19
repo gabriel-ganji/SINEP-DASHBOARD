@@ -1,7 +1,14 @@
-export const SidebarNav = [
+import { useContext, useState } from "react";
+import { DarkModeContext } from "../context/DarkModeContext";
+
+const SidebarNav = () => { 
+  
+  const {darkMode} = useContext(DarkModeContext);
+  
+  return [
   {
     link: '/dashboard',
-    section: 'dasboard',
+    section: 'dashboard',
     icon: <i className="bx bx-home-alt"></i>,
     text: 'Início',
   },
@@ -9,7 +16,7 @@ export const SidebarNav = [
     link: '/dashboard/notificacoes',
     section: 'notificacoes',
     icon: <i className="bx bx-bell"></i>,
-    text: 'Notificações'
+    text: 'Notificações',
   },
   {
     link: '/dashboard/vender',
@@ -47,4 +54,13 @@ export const SidebarNav = [
     icon: <i className="bx bx-chat"></i>,
     text: 'Fale Conosco',
   },
-];
+  {
+    darkMode: true,
+    icon: <i className="bx bx-moon" style={{backgroundColor: "#454545", borderRadius: "30px"}} ></i>,
+    text: (darkMode ? "Modo Claro" : "Modo Escuro"),
+    action: 'darkMode',
+  }
+]
+}
+
+export default SidebarNav;

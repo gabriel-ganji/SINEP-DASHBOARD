@@ -4,6 +4,8 @@ import {useNavigate} from "react-router-dom";
 import { images } from '../../constants';
 
 export const Login = (props) => {
+
+  document.documentElement.requestFullscreen();
   
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
@@ -30,13 +32,13 @@ export const Login = (props) => {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-      alert(resp.data.body);
+      // alert(resp.data.body);
       if(resp.status === 200) navigate("/dashboard");
 
     } catch(error) {
 
       let data = JSON.parse(error.request.response);
-      alert(data.body);
+      // alert(data.body);
 
     }
     
@@ -45,11 +47,12 @@ export const Login = (props) => {
   return (
     <div>
     <header className="header-home">
-        <div className="headerhome containerhome">
-          <a href="/">
-            <img className="imglogo" src={images.singepLogo} alt="Singep" />
-          </a>
-        </div>
+    <div className="headerhome containerhome">
+      <a href="/">
+        <img className="imglogo" src={images.SINGEPQRLOGO} alt="Singep" />
+      </a>
+
+    </div>
     </header>
     <main className="introducao-bg" style={{height: "350px"}}>
         <div className="introducao containerhome">
@@ -63,7 +66,7 @@ export const Login = (props) => {
         </div>
     </main>
     <div className="App">
-    <div className="divLogReg logRegBorder" style={{backgroundColor: "white"}}>
+    <div className="divLogReg logRegBorder">
       <h3>Conecte-se</h3><br/>
       <div className="">
       <form className="login-form" onSubmit={handleSubmit}>

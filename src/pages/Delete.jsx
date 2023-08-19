@@ -1,9 +1,15 @@
-import React from 'react';
 import axios from "axios";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+
+//context
+import { DarkModeContext } from "../context/DarkModeContext";
 
 export const Delete = (props) => {
+
     document.documentElement.requestFullscreen();
+
+    const {darkMode} = useContext(DarkModeContext);
+
     const [name, setName] = useState('name');
     const [lote, setLote] = useState('lote');
 
@@ -80,7 +86,7 @@ export const Delete = (props) => {
                 <div className='columnassunto'>
                     <div className='selectboxassunto'> 
 
-                      <select value={name} onChange={handleName}>
+                      <select className={`${darkMode ? "darkMode" : ""}`} value={name} onChange={handleName}>
                         <option>Produto</option>
                         {
                         productsData.map((prod) => {
@@ -100,7 +106,7 @@ export const Delete = (props) => {
                 <label htmlFor="">Lote</label>
                 <div className='columnassunto'>
                     <div className='selectboxassunto'> 
-                    <select value={lote} onChange={handleLote}>
+                    <select className={`${darkMode ? "darkMode" : ""}`} value={lote} onChange={handleLote}>
                         <option>Lote</option>
                         {
                         productsData.map((prod) => {

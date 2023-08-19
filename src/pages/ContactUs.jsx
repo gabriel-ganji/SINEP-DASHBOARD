@@ -1,10 +1,11 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { DarkModeContext } from '../context/DarkModeContext';
 
 export const ContactUs = () => {
 
     document.documentElement.requestFullscreen();
+    const {darkMode} = useContext(DarkModeContext);
 
     const allMsg = [];
 
@@ -33,7 +34,7 @@ export const ContactUs = () => {
                 <label htmlFor="">Assunto</label>
                 <div className='columnassunto'>
                     <div className='selectboxassunto'> 
-                      <select>
+                      <select className={`${darkMode ? "darkMode" : ""}`}>
                         <option>Conta</option>
                         <option>Ajuda</option>
                         <option>Senha</option>
@@ -48,7 +49,7 @@ export const ContactUs = () => {
             </div><br></br>
             <div className='areacontato'>
                 <label htmlFor="">Mensagem</label>
-                <textarea className='' type="text" placeholder='Conte-nos um pouco mais sobre'/>
+                <textarea className={`${darkMode ? "darkMode" : ""}`} type="text" placeholder='Conte-nos um pouco mais sobre'/>
                 
             </div>
             {/* <TextAreaExampleTextArea /> */}

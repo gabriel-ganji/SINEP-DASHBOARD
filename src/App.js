@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './scss/App.scss';
@@ -18,13 +18,17 @@ import { Delete } from './pages/Delete';
 import { Notifications } from "./pages/Notifications";
 import { Home } from "./pages/Home/Home";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { DarkModeContext } from './context/DarkModeContext';
 
 function App() {
+
   const [currentForm, setCurrentForm] = useState('login');
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
   };
+
+  const {darkMode} = useContext(DarkModeContext);
 
   return (
     <BrowserRouter>
@@ -34,7 +38,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/authUserAccount" element={<ConfirmCode />} />
         <Route path="/dashboard" element={<MainLayout />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={<Dashboard darkMode={darkMode} />} />
           <Route path="/dashboard/notificacoes" element={<Notifications />} />
           <Route path="/dashboard/vender" element={<QRCodeWebcame />} />
           <Route path="/dashboard/registrar" element={<RegisterProduct />} />

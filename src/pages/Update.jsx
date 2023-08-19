@@ -1,9 +1,13 @@
-import React from 'react';
 import axios from "axios";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { DarkModeContext } from "../context/DarkModeContext";
 
 export const Update = () => {
+
     document.documentElement.requestFullscreen();
+    
+    const {darkMode} = useContext(DarkModeContext);
+
     const [name, setName] = useState('name');
     const [lote, setLote] = useState('lote');
     const [newPrice, setNewPrice] = useState('');
@@ -91,7 +95,7 @@ export const Update = () => {
                 <label htmlFor="">Nome</label>
                 <div className='columnassunto'>
                     <div className='selectboxassunto'> 
-                    <select value={name} onChange={handleName}>
+                    <select className={`${darkMode ? "darkMode" : ""}`} value={name} onChange={handleName}>
                         <option>Produto</option>
                         {
                         productsData.map((prod) => {
@@ -111,7 +115,7 @@ export const Update = () => {
                 <label htmlFor="">Lote</label>
                 <div className='columnassunto'>
                     <div className='selectboxassunto'> 
-                    <select value={lote} onChange={handleLote}>
+                    <select className={`${darkMode ? "darkMode" : ""}`} value={lote} onChange={handleLote}>
                         <option>Lote</option>
                         {
                         productsData.map((prod) => {
@@ -131,7 +135,7 @@ export const Update = () => {
 
             <div className='input-boxatt'>
                 <label htmlFor="">Novo Preço</label>
-                <input value={newPrice} type="text" placeholder='R$' onChange={handlePrice}/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={newPrice} type="text" placeholder='R$' onChange={handlePrice}/>
                 
             </div>
             </form>

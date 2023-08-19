@@ -1,7 +1,7 @@
 import React from 'react'
 import './dashboard-wrapper.scss'
 
-export const DashboardWrapper = props => {
+export const DashboardWrapper = (props) => {
     return (
         <div className='dashboard-wrapper'>
             {props.children}
@@ -11,7 +11,7 @@ export const DashboardWrapper = props => {
 
 export default DashboardWrapper
 
-export const DashboardWrapperMain = props => {
+export const DashboardWrapperMain = (props) => {
     return (
         <div className='dashboard-wrapper__main'>
             {props.children}
@@ -19,7 +19,7 @@ export const DashboardWrapperMain = props => {
     )
 }
 
-export const DashboardWrapperRight = props => {
+export const DashboardWrapperRight = (props) => {
     return (
         <div className='dashboard-wrapper__right'>
             {props.children}

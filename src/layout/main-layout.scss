@@ -3,7 +3,14 @@
 .main {
   padding-left: $sideBarWidth;
   overflow-x: hidden;
-  background: rgb(247, 247, 247);
+  background: #eeeeee;
+  color: rgb(0, 0, 0);
+
+  &.dark-mode {
+    background-color: #303030; // Cor de fundo para o modo dark
+    color: #ffffff; // Cor do texto para o modo dark
+  }
+
 
   @include tablet {
     padding-left: 0;
@@ -21,5 +28,6 @@
         background-color: $bodyBg;
     }
   }
+
 }
 

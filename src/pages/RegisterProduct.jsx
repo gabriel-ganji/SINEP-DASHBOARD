@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import { DarkModeContext } from '../context/DarkModeContext';
 
 export const RegisterProduct = (props) => {
+
     document.documentElement.requestFullscreen();  
+    
+    const {darkMode} = useContext(DarkModeContext);
+    
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [lote, setLote] = useState('');
@@ -86,37 +91,37 @@ export const RegisterProduct = (props) => {
 
             <div className='input-boxreg'>
                 <label htmlFor="">Produto</label>
-                <input value={name} onChange={handleName} type="text" placeholder='Nome do Produto'/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={name} onChange={handleName} type="text" placeholder='Nome do Produto'/>
 
             </div>
 
             <div className='input-boxreg'>
                 <label htmlFor="">Preço</label>
-                <input value={price} onChange={handlePrice} type="text" placeholder='R$'/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={price} onChange={handlePrice} type="text" placeholder='R$'/>
                 
             </div>
 
             <div className='input-boxreg'>
                 <label htmlFor="">Lote</label>
-                <input value={lote} onChange={handleLote} type="text" placeholder='Lote do Produto'/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={lote} onChange={handleLote} type="text" placeholder='Lote do Produto'/>
                 
             </div>
 
             <div className='input-boxreg'>
                 <label htmlFor="">Data de validade</label>
-                <input value={expiry} onChange={handleExpiry} type="date" placeholder='Data da Validade'/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={expiry} onChange={handleExpiry} type="date" placeholder='Data da Validade'/>
                 
             </div>
 
             <div className='input-boxreg'>
                 <label htmlFor="">Total de unidade</label>
-                <input value={totalun} onChange={handleTotalun} type="text" placeholder='Total Unitario'/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={totalun} onChange={handleTotalun} type="text" placeholder='Total Unitario'/>
                 
             </div>
 
             <div className='input-boxreg'>
                 <label htmlFor="">Total em KG ou Quilogramas</label>
-                <input value={totalkg} onChange={handleTotalkg} type="text" placeholder='Total em KG/G'/>
+                <input className={`${darkMode ? "darkMode" : ""}`} value={totalkg} onChange={handleTotalkg} type="text" placeholder='Total em KG/G'/>
                 
             </div>
             

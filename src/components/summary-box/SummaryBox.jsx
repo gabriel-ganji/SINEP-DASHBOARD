@@ -25,11 +25,11 @@ ChartJS.register(
   Legend
 )
 
-export const SummaryBox = ({ item}) => {
+export const SummaryBox = ({ item, darkMode }) => {
   return (
-    <Box>
+    <Box darkMode={darkMode}>
     <div className="summary-box">
-      <div className="summary-box__info">
+      <div className={`summary-box__info ${darkMode ? "darkMode" : ""}`}>
         <div className="summary-box__info__title"></div>
         <div>{item.title}</div>
         <span>{item.subtitle}</span>
@@ -101,7 +101,7 @@ export const SummaryBoxSpecial = ({item}) => {
         <div className="summary-box-special__value">
           {item.value}
         </div>
-        <div className="summary-box-special__chart">
+        <div className="summary-box-special__chart" style={{backgroundColor: "rgb(255 255 255 / 20%)", borderRadius: "10px"}}>
             <Line options={chartOptions} data={chartData} width={`250px`} />
         </div>
       </div>

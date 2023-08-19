@@ -5,6 +5,8 @@ import {useNavigate} from "react-router-dom";
 import { images } from '../../constants';
 
 export const Register = (props) => {
+
+  document.documentElement.requestFullscreen();
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -42,11 +44,11 @@ export const Register = (props) => {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-      alert(resp.data);
+      // alert(resp.data);
       navigate("/authUserAccount");
 
     } catch(error) {
-      alert(error.request.response);
+      // alert(error.request.response);
       console.log(error.request.response);
 
       console.log(error.request.status);
@@ -84,9 +86,10 @@ export const Register = (props) => {
     <div>
         <header className="header-home">
         <div className="headerhome containerhome">
-          <a href="/">
-            <img className="imglogo" src={images.singepLogo} alt="Singep" />
-          </a>
+        <a href="/">
+          <img className="imglogo" src={images.SINGEPQRLOGO} alt="Singep" />
+        </a>
+
         </div>
       </header>
       <main className="introducao-bg" style={{height: "350px"}}>
@@ -102,7 +105,7 @@ export const Register = (props) => {
       </main>
       
     <div className="App">
-    <div className="logRegBorder" style={{backgroundColor: "white"}}>
+    <div className="logRegBorder">
       <h3>Registre-se</h3><br/>
       <form  className="formTextAlignLeft" onSubmit={handleSubmit}>
         <div className="rowReg">

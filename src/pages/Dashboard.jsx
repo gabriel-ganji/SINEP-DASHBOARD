@@ -4,6 +4,7 @@ import DashboardWrapper, { DashboardWrapperMain } from '../components/dashboard-
 import { colors, data } from '../constants'
 import { SummaryBox, SummaryBoxSpecial } from '../components/summary-box/SummaryBox'
 import { Box } from '../components/box/Box';
+import { useEffect } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -86,9 +87,18 @@ const RevenueByMonthsChart = () => {
   )
 }
 
-export const Dashboard = () => {
+export const Dashboard = ({darkMode}) => {
+
   document.documentElement.requestFullscreen();
-  socket.emit("invalidProds", {whatsapp: "11959050868"});
+  
+  useEffect(() => {
+  
+    socket.emit("invalidProds", {whatsapp: "11958279760"});
+  
+  }, []);
+  
+  
+  console.log("Dashboard: ", darkMode);
   return (
     <DashboardWrapper>
           <DashboardWrapperMain>
@@ -98,7 +108,7 @@ export const Dashboard = () => {
                         {
                             data.summary.map((item, index) => (
                                 <div key={`summary-${index}`} className="col-6 col-md-6 col-sm-12 mb">
-                                    <SummaryBox item={item}/>
+                                    <SummaryBox item={item} darkMode={darkMode} />
                                 </div>
                             ))
                         }

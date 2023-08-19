@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import QrReader from 'react-qr-reader';
 import axios from "axios";
 import bipSound from '../static/bipSound.mp3';
 import womanAlert from "../static/expiredProd.mp3";
+import { DarkModeContext } from '../context/DarkModeContext';
 
 let bipSong = new Audio(bipSound);
 let womanSongAlert = new Audio(womanAlert);
@@ -18,6 +19,8 @@ const QRCodeWebcam = () => {
   const [prod, setProd] = useState("");
   const [legacy, setLegacy] = useState(true);
 
+  const {darkMode} = useContext(DarkModeContext);
+
   useEffect(() => {
     document.documentElement.requestFullscreen();
     const notDouble = async (result) => {
@@ -25,7 +28,7 @@ const QRCodeWebcam = () => {
       const resp = await axios.get(`http://localhost:3033/singep/product/${aux[1]}/${aux[2]}`);
       console.log(resp);
       let price = Number(resp.data[0].price);
-      aux.push("r$"+price);
+      aux.push("R$"+price);
       itens.push(aux);
       let newValue = Number(totalPrice) + price;
       setTotalPrice(newValue);
@@ -86,13 +89,14 @@ const QRCodeWebcam = () => {
       
       <div className='divcaixa'> 
         <div className='boxesquerda'>
-        <div className="topodescricao">
+        <div className={`topodescricao ${darkMode ? "darkMode": ""}`}>
               <div><h5>Produto</h5></div>
-              <div><h5>Quantidade</h5></div>
+              <div><h5>Lote</h5></div>
               <div><h5>Preço</h5></div>
+              <div><h5>Quantidade</h5></div>
             </div>
 
-            <div className="exibirprodutos">
+            <div className={`exibirprodutos ${darkMode ? "darkMode" : ""}`}>
             <table className='ProdList'>
                 <tr className='initial'>
                     <th></th>
@@ -103,12 +107,12 @@ const QRCodeWebcam = () => {
               {
                 buyingItens.map((item, index) => {
                   if(true /*index%2 === 0*/){
-                    return <><tr style={{backgroundColor: "white"}}>
+                    return <><tr>
                             <td>{item[1]}</td>
                             <td>{item[2]}</td>
                             <td>{item[4]}</td>
                             <td>1</td>
-                        </tr><hr/></>
+                        </tr></>
                   } else {
                      
                   }})
@@ -131,7 +135,7 @@ const QRCodeWebcam = () => {
         </div>
 
         <div className='boxdireita'>
-            <div className='topodireita'>
+            <div className={` topodireita ${darkMode ? "darkMode": ""}`}>
             <div>
             <div className="card-header m-1 rounded text-center">
             
@@ -144,7 +148,7 @@ const QRCodeWebcam = () => {
                 legacyMode={legacy}
                 facingMode={'environment'}
               />
-              <button style={{width: "150px", borderRadius: "5px", background: "green", color: "white", padding: "2px"}} onClick={() => setLegacy(false)}>Iniciar Venda</button>
+              <button style={{width: "150px", borderRadius: "5px", background: "rgb(0 255 89)", color: "black", padding: "5px"}} onClick={() => setLegacy(false)}>Câmera</button>
             </div>
             {/* <div className="card-footer rounded mb-1">
               <h6>WebCam Result: {webcamResult}</h6>

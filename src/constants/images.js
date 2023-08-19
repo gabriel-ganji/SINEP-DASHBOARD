@@ -16,7 +16,9 @@ const images = {
     foods: require("../assets/images/alimentos.jpg"),
     NotFounded404Cat: require("../assets/images/404.jpg"),
     market: require("../assets/images/market.png"),
-    market2: require("../assets/images/market2.png")
+    market2: require("../assets/images/market2.png"),
+    SINGEPQRLOGO: require("../assets/images/SINGEPQRLOGO.png"),
+    cesta: require("../assets/images/market2.png")
 
 }
 

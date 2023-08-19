@@ -1,0 +1,52 @@
+[33m368561d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: pull: Fast-forward
+[33mb280f3f[m HEAD@{1}: commit: tela contato
+[33med37ad7[m HEAD@{2}: commit: contato atualizado
+[33m7e8b5a8[m HEAD@{3}: checkout: moving from gabrielBranch to main
+[33m57370d4[m[33m ([m[1;32mgabrielBranch[m[33m)[m HEAD@{4}: commit (merge): Merge branch 'main' into gabrielBranch
+[33mae37c65[m HEAD@{5}: pull: Fast-forward
+[33md8702ae[m HEAD@{6}: checkout: moving from main to gabrielBranch
+[33m7e8b5a8[m HEAD@{7}: commit: tela dashboard refeita
+[33m3820ec4[m HEAD@{8}: pull: Fast-forward
+[33m2b0613e[m HEAD@{9}: commit: tela venda refeita
+[33mf520601[m HEAD@{10}: commit: final tela venda
+[33me725775[m HEAD@{11}: merge gabrielBranch: Merge made by the 'ort' strategy.
+[33mc919ff1[m HEAD@{12}: checkout: moving from gabrielBranch to main
+[33md8702ae[m HEAD@{13}: pull: Fast-forward
+[33mc3275b5[m HEAD@{14}: checkout: moving from main to gabrielBranch
+[33mc919ff1[m HEAD@{15}: checkout: moving from gabrielBranch to main
+[33mc3275b5[m HEAD@{16}: checkout: moving from main to gabrielBranch
+[33mc919ff1[m HEAD@{17}: merge gabrielBranch: Merge made by the 'ort' strategy.
+[33m90b57d3[m HEAD@{18}: commit: tela venda start
+[33m82bae64[m HEAD@{19}: checkout: moving from gabrielBranch to main
+[33mc3275b5[m HEAD@{20}: checkout: moving from main to gabrielBranch
+[33m82bae64[m HEAD@{21}: pull: Fast-forward
+[33mf13a8bf[m HEAD@{22}: checkout: moving from gabrielBranch to main
+[33mc3275b5[m HEAD@{23}: pull: Fast-forward
+[33mc45846e[m HEAD@{24}: checkout: moving from main to gabrielBranch
+[33mf13a8bf[m HEAD@{25}: pull: Merge made by the 'ort' strategy.
+[33me142169[m HEAD@{26}: commit: tela dashboard em construção
+[33mdf2e52d[m HEAD@{27}: pull origin main: Fast-forward
+[33m9c510d0[m HEAD@{28}: commit: tela home
+[33m0a34a16[m HEAD@{29}: commit: tela home
+[33m58b6852[m HEAD@{30}: pull: Merge made by the 'ort' strategy.
+[33mf0417cd[m HEAD@{31}: pull origin gabrielBranch: Merge made by the 'ort' strategy.
+[33mf7f71df[m HEAD@{32}: reset: moving to HEAD
+[33mf7f71df[m HEAD@{33}: commit: telas
+[33m5106574[m HEAD@{34}: commit: tela registrar produto
+[33mf1d9f51[m HEAD@{35}: pull origin main: Fast-forward
+[33m95828a4[m HEAD@{36}: commit: correção de bugs, css e pages
+[33m97d5b9d[m HEAD@{37}: pull: Fast-forward
+[33m201f613[m HEAD@{38}: reset: moving to HEAD
+[33m201f613[m HEAD@{39}: commit: side bar e topnav atualizados
+[33m96a4586[m HEAD@{40}: commit: sidebar and topnav
+[33mc45846e[m HEAD@{41}: merge gabrielBranch: Fast-forward
+[33m9db518f[m HEAD@{42}: checkout: moving from gabrielBranch to main
+[33mc45846e[m HEAD@{43}: checkout: moving from main to gabrielBranch
+[33m9db518f[m HEAD@{44}: pull: Fast-forward
+[33mafc7fdd[m HEAD@{45}: commit: post axios
+[33mece0dc3[m HEAD@{46}: commit: alteração login.jsx
+[33me71037f[m HEAD@{47}: commit: alteração e adicição do onchange
+[33m4d380e2[m HEAD@{48}: Branch: renamed refs/heads/main to refs/heads/main
+[33m4d380e2[m HEAD@{50}: commit: commit inicial
+[33m5ddf37a[m HEAD@{51}: Branch: renamed refs/heads/master to refs/heads/main
+[33m5ddf37a[m HEAD@{53}: commit (initial): Initialize project using Create React App

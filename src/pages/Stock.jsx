@@ -11,7 +11,7 @@ export const Stock = () => {
         useEffect(() => {
             async function fetchData() {
                 try {
-                    const resp = await axios.get('http://localhost:3033/singep/products/product/11959050868');
+                    const resp = await axios.get('http://localhost:3033/singep/products/product/11958279760');
                     setData(resp);
                 } catch(err){
                     console.log(err);

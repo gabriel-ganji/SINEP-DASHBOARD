@@ -40,24 +40,24 @@ export const ConfirmCode = (props) => {
     <div>
       <header className="header-home">
         <div className="headerhome containerhome">
-          <a href="/">
-            <img className="imglogo" src={images.singepLogo} alt="Singep" />
-          </a>
+        <a href="/">
+           <img className="imglogo" src={images.SINGEPQRLOGO} alt="Singep" />
+         </a>
         </div>
     </header>
-    <main className="introducao-bg">
+    <main className="introducao-bg" style={{height: "350px"}}>
         <div className="introducao containerhome">
           <div className="introducao-conteudo">
             
             
           </div>
           <div className="introducao-imagem">
-            <img className="tratarimg" src={images.introducao} alt="" />
+            
           </div>
         </div>
       </main>
     <div className="App">
-    <div className="divLogReg logRegBorder" style={{backgroundColor: "white"}}>
+    <div className="divLogReg logRegBorder">
       <h3>Autenticar</h3><br></br>
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="user">Código</label>
